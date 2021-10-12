@@ -1,0 +1,19 @@
+[package]
+name = "rocket-server"
+version = "0.1.0"
+authors = ["Tom <tomek7sa@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rocket = { git = "https://github.com/SergioBenitez/Rocket", version = "0.5.0-dev" }
+mongodb = { version = "1.1.1", default-features = false, features = ["async-std-runtime"] }
+tokio-compat-02 = "0.2"
+serde_json = "1.0"
+
+[profile.release]
+codegen-units = 1
+lto = true
+panic = "abort"
+rustflags = "-C target-cpu=native"
