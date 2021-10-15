@@ -19,7 +19,7 @@ const options = {
 };
 
 const app = express();
-var port = 80;
+var port = 3004;
 
 var dataServer;
 var clientServer;
